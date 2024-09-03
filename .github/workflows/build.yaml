@@ -20,8 +20,8 @@ jobs:
       uses: actions/checkout@v2
       with:
         fetch-depth: 0 
-    # - name: SonarCloud Scans
-    #   uses: SonarSource/sonarcloud-github-action@master
-    #   env:
-    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: SonarCloud Scans
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
