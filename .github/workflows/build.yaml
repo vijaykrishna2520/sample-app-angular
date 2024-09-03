@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Ensure full history is fetched
     - name: Setup Node.js and Install dependencies
       uses: actions/setup-node@v3
       with:
@@ -16,10 +20,6 @@ jobs:
 
     - name: Run Tests
       run: npm run test 
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # Ensure full history is fetched
 
 
     - name: SonarCloud Scan
