@@ -21,16 +21,15 @@ jobs:
     - name: Test
       run: npm run test 
     - name: SonarCloud
-      steps:
-        - uses: actions/checkout@v2
-          with:
-            fetch-depth: 0 
-        - name: Install dependencies
-          run: npm install
-        - name: Test and coverage
-          run: npm run test
-        - name: SonarCloud Scan
-          uses: SonarSource/sonarcloud-github-action@master
-          env:
-            SONAR_TOKEN: ${{ secrets. SONAR_TOKEN }}
-            GIT_HUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 
+    - name: Install dependencies
+      run: npm install
+    - name: Test and coverage
+      run: npm run test
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets. SONAR_TOKEN }}
+        GIT_HUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
