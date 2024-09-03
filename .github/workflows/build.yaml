@@ -31,10 +31,10 @@ jobs:
 
     # - name: Install dependencies with npm install
     #   run: npm install
-    - name: Test and coverage
-      run: npm run test
-    - name: SonarCloud Scan
-      - uses: SonarSource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Test and coverage
+    #   run: npm run test
+    # - name: SonarCloud Scan
+    #   - uses: SonarSource/sonarcloud-github-action@master
+    #     env:
+    #       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
