@@ -1,26 +1,34 @@
 name: Angular CI
 
 on:
-  push: 
-    branches: [ main ]  # Or your default branch
+  push:
+    branches: [main] 
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specify the runner environment
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # Ensure full history is fetched
-    - name: Setup Node.js and Install dependencies
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.x'  # Or your preferred Node.js version
+    - name: Checkout code, Setup Node.js, and Install dependencies
+      run: |
+        echo "::group::Checkout code"
+        git clone https://github.com/${{ github.repository }}.git 
+        cd ${{ github.event.repository.name }}
+        echo "::endgroup::"
+
+        echo "::group::Setup Node.js"
+        curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+        sudo apt-get install -y nodejs
+        echo "::endgroup::"
+
+        echo "::group::Install dependencies"
+        npm ci
+        echo "::endgroup::"
 
     - name: Run Tests
-      run: npm run test 
-
+      run: |
+        npm run build -- --configuration production
+        npm run test -- --code-coverage --watch=false 
 
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1
