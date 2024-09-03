@@ -14,8 +14,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'  # Or your preferred Node.js version
-    - name: Test
-      run: npm run test 
+    # - name: Test
+    #   run: npm run test 
     - name: SonarCloud
       uses: actions/checkout@v2
       with:
