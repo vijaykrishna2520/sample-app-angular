@@ -14,8 +14,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'  # Or your preferred Node.js version
-    - name: Install dependencies
-      run: npm ci
+    # - name: Install dependencies
+    #   run: npm ci
     - name: Build
       run: npm run build -- --configuration production
     - name: Test
@@ -31,5 +31,5 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
-        SONAR_TOKEN: ${{ secrets. SONAR_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
