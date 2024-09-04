@@ -23,6 +23,11 @@ jobs:
       run: cat ${{ github.workspace }}/coverage/sample-app/lcov.info
     - name: lcov check but different
       run: cat coverage/sample-app/lcov.info
+    - name: Upload coverage report as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage/sample-app/lcov.info
     # - name: List files in workspace
     #   run: ls -la ${{ github.workspace }}
 
@@ -30,6 +35,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: test  # This job will run only after the 'test' job completes successfully
     steps:
+    - name: Download coverage report artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage/sample-app 
     - name: just_check_npm_before
       run: ls -lR ${{github.workspace}}
     - name: just_check_npm_before--1
