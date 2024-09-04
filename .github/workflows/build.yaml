@@ -18,7 +18,7 @@ jobs:
     - name: Test
       run: npm run build && npm run test 
     - name: Check LCOV
-      run: cat ${{ github.workspace }}sampl-app/coverage/lcov.info
+      run: cat ${{ github.workspace }}/coverage/sample-app/lcov.info
     - name: lcov check but different
       run: cat coverage/sample-app/lcov.info
     # - name: List files in workspace
