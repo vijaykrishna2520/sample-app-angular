@@ -40,7 +40,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         WORKING_DIR:  ${{ github.workspace }}
       with:
-        args: >
+        args:
           -Dsonar.working.directory=${{ github.workspace }} 
           -Dsonar.projectKey=vijaykrishna2520_sample-app-angular
           -Dsonar.javascript.lcov.reportPaths=${{ env.WORKING_DIR }}/coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
