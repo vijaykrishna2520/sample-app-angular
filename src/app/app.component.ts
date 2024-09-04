@@ -24,4 +24,8 @@ export class AppComponent {
     console.log("Hello suepr try");
     return;
   }
+  public keepOnGoing():void{
+    console.log("Hello suepr try");
+    return;
+  }
 }
