@@ -40,6 +40,9 @@ jobs:
       with:
         name: coverage-report
         path: coverage/sample-app 
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 
     - name: just_check_npm_before
       run: ls -lR ${{github.workspace}}
     - name: just_check_npm_before--1
