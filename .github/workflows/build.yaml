@@ -35,6 +35,7 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       with:
         args: -Dsonar.working.directory=${{ github.workspace }} 
+        args: -Dsonar.projectBaseDir=${{ github.workspace }} 
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
