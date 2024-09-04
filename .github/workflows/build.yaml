@@ -34,26 +34,26 @@ jobs:
     #   with:
     #     fetch-depth: 0 
     - name: SonarCloud Scans
-      uses: SonarSource/sonarcloud-github-action@master
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         WORKING_DIR:  ${{ github.workspace }}
+      uses: SonarSource/sonarcloud-github-action@master
       with:
-      args: >
-        -Dsonar.working.directory=${{ github.workspace }} 
-        -Dsonar.projectKey=vijaykrishna2520_sample-app-angular
-        -Dsonar.javascript.lcov.reportPaths=${{ env.WORKING_DIR }}/coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
-        -Dsonar.organization=vijaykrishna2520
-        -Dsonar.projectBaseDir=. 
-        -Dsonar.sourceEncoding=UTF-8
-        -Dsonar.projectName=sample-app 
-        -Dsonar.projectVersion=1.0 
-        -Dsonar.sources=src
-        -Dsonar.inclusions=**/*.ts 
-        -Dsonar.tests=src 
-        -Dsonar.test.inclusions=**/*.spec.ts 
-        -Dsonar.typescript.lcov.reportPaths=coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
-        -Dsonar.log.level=INFO
-        -Dsonar.host.url=https://sonarcloud.io
-        -Dsonar.working.directory=${{env.WORKING_DIR}}
+        args: >
+          -Dsonar.working.directory=${{ github.workspace }} 
+          -Dsonar.projectKey=vijaykrishna2520_sample-app-angular
+          -Dsonar.javascript.lcov.reportPaths=${{ env.WORKING_DIR }}/coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
+          -Dsonar.organization=vijaykrishna2520
+          -Dsonar.projectBaseDir=. 
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.projectName=sample-app 
+          -Dsonar.projectVersion=1.0 
+          -Dsonar.sources=src
+          -Dsonar.inclusions=**/*.ts 
+          -Dsonar.tests=src 
+          -Dsonar.test.inclusions=**/*.spec.ts 
+          -Dsonar.typescript.lcov.reportPaths=coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
+          -Dsonar.log.level=INFO
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.working.directory=${{env.WORKING_DIR}}
