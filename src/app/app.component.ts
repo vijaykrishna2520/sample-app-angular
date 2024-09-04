@@ -9,7 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'sample-o ok';
+  title = 'Hello, okok-app';
 
   public sample():void{
     console.log("sample");
