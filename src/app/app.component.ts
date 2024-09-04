@@ -19,4 +19,9 @@ export class AppComponent {
     console.log("Hello SuperSample");
     return;
   }
+
+  public letsTry():void{
+    console.log("Hello suepr try");
+    return;
+  }
 }
