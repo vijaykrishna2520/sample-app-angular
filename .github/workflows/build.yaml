@@ -17,6 +17,8 @@ jobs:
       run: npm ci
     - name: Test
       run: npm run test 
+    - name: Check LCOV
+      run: ls -R coverage
 
   sonarcloud-scan:
     runs-on: ubuntu-latest
