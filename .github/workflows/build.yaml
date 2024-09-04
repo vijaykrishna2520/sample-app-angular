@@ -19,6 +19,8 @@ jobs:
       run: npm run test 
     - name: Check LCOV
       run: ls -lR coverage
+    - name: List files in workspace
+      run: ls -la ${{ github.workspace }}
 
   sonarcloud-scan:
     runs-on: ubuntu-latest
