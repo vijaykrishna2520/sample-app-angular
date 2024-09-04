@@ -52,6 +52,7 @@ jobs:
           -Dsonar.typescript.lcov.reportPaths=coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
           -Dsonar.log.level=INFO
           -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.projectBaseDir=${{github.workspace}}
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
