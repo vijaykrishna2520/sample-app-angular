@@ -16,7 +16,7 @@ jobs:
     - name: angular
       run: npm ci
     - name: Test
-      run: npm run test 
+      run: npm run build && npm run test 
     # - name: Check LCOV
     #   run: ls -lR coverage
     # - name: List files in workspace
