@@ -56,5 +56,4 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       with:
         args: >
-          -Dsonar.projectBaseDir=${{env.WORKING_DIR}} 
           -Dsonar.working.directory=${{env.WORKING_DIR}}
