@@ -35,6 +35,10 @@ jobs:
     #     fetch-depth: 0 
     - name: SonarCloud Scans
       uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        WORKING_DIR:  ${{ github.workspace }}
       with:
         args: >
           -Dsonar.working.directory=${{ github.workspace }} 
@@ -52,7 +56,4 @@ jobs:
           -Dsonar.typescript.lcov.reportPaths=coverage/${{ env.SONAR_PROJECT_NAME }}/lcov.info
           -Dsonar.log.level=INFO
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.projectBaseDir=${{github.workspace}}
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          -Dsonar.working.directory=${{env.WORKING_DIR}
