@@ -7,6 +7,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      WORKING_DIR: ${{ github.workspace }}
     steps:
     - uses: actions/checkout@v3
     - name: Setup Node.js
@@ -31,8 +33,6 @@ jobs:
         fetch-depth: 0 
     - name: SonarCloud Scans
       uses: SonarSource/sonarcloud-github-action@master
-      with:
-        args: -Dsonar.working.directory=${{ github.workspace }} 
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
