@@ -28,4 +28,9 @@ export class AppComponent {
     console.log("Hello suepr try");
     return;
   }
+
+  public heyBroOneMoreTry():void{
+    console.log("super cool")
+    return;
+  }
 }
