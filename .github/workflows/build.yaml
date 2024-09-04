@@ -30,9 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: test  # This job will run only after the 'test' job completes successfully
     steps:
-    # - uses: actions/checkout@v2
-    #   with:
-    #     fetch-depth: 0 
+    - name: just_check_npm_before
+      run: ls -lR ${{github.workspace}}
+    - name: just_check_npm_before--1
+      run: ls -lR .
     - name: SonarCloud Scans
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
