@@ -54,6 +54,6 @@ jobs:
         WORKING_DIR:  ${{ github.workspace }}
         SONAR_PROJECT_NAME: sample-app
       uses: SonarSource/sonarcloud-github-action@master
-      with:
-        args: >
-          -Dsonar.working.directory=${{env.WORKING_DIR}}
+      # with:
+      #   args: >
+      #     -Dsonar.working.directory=${{env.WORKING_DIR}}
